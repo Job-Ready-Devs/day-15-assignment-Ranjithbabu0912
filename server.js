@@ -60,3 +60,19 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+
+
+
+// Import the mongoose library to interact with MongoDB
+const mongoose = require('mongoose');
+
+// Define the MongoDB connection URI
+// Replace 'localhost:27017/student-management' with your MongoDB URI (local or cloud-based)
+const mongoURI = 'mongodb://localhost:27017/';
+
+// Connect to the MongoDB database using mongoose
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+   .then(() => console.log('MongoDB connected...')) // If the connection is successful, log a confirmation message
+   .catch(err => console.error('MongoDB connection error:', err)); // If the connection fails, log an error message with the details
